@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario de la Clase de Diseño Gráfico</title>
+
+
+    <link rel="stylesheet" href="css/estilos.css"> 
+
+    <link rel="icon" type="image/png" href="img/huevo_frito.png">
+    
+</head>
+<body>
+
+  <!-- NAVEGACIÓN
+       display: flex + justify-content: space-between para logo y menu a los extremos
+       align-items: center para alinear verticalmente
+       position: sticky para que se quede fija al hacer scroll -->
+  <nav>
+    <a class="logo" href="#top">Receta Classss :) </a>
+
+    <ul>
+      <li><a href="#recetas">Recetas</a></li>
+      <li><a href="#enviar">Enviar la tuya</a></li>
+      <li><a href="#footer">Contacto</a></li>
+      <!-- Último li difernte -->
+      <li><a href="#enviar">+ Añadir receta</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO
+         height: 100vh → ocupa toda la altura de la ventana
+         background-image + background-size: cover → la imagen cubre todo sin deformarse
+         background-position: center → centra el punto de enfoque
+         display: flex + flex-direction: column para centrar el contenido -->
+    <section id="top" class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Curso 2026 · HACER Creativo</p>
+        <h1>El recetario<br>de <em>Diseño Gráfico</em></h1>
+        <p class="hero-sub">Cocinado con código y una pizca de sal.</p>
+        <a href="#recetas" class="btn-hero">Ver recetas ↓</a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN RECETAS
+         display: grid + grid-template-columns: repeat(3, 1fr) → 3 columnas iguales
+         gap para separación entre tarjetas -->
+    <section class="recetas" id="recetas">
+      <div class="recetas-inner">
+        <h2>Recetas de los alumnos</h2>
+        <div class="grid">
+
+          <!-- CARD
+               overflow: hidden para que la imagen respete el border-radius
+               transition para animar el hover suavemente
+               transform: translateY(-4px) → sube al hacer hover -->
+          <a class="card" href="recetas/tiramisu.html">
+            <div class="card-img">
+              <img src="https://www.lekue.com/cdn-cgi/image/format=auto,onerror=redirect/media/.renditions/wysiwyg/LEKUE/lekueblogs/Imagen-principal-tiramisu.jpg" alt="Tiramisú">
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Postre</span>
+              <h3>Tiramisú</h3>
+              <p class="autor">por Natalia</p>
+              <span class="card-link">Ver receta →</span>
+            </div>
+          </a>
+
+          <a class="card" href="#">
+            <div class="card-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/1200px-Eq_it-na_pizza-margherita_sep2005_sml.jpg" alt="Pizza">
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Principal</span>
+              <h3>Pizza Margherita</h3>
+              <p class="autor">por Marco</p>
+              <span class="card-link">Ver receta →</span>
+            </div>
+          </a>
+
+          <a class="card" href="#">
+            <div class="card-img">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Gazpacho_andaluz.jpg/1200px-Gazpacho_andaluz.jpg" alt="Gazpacho">
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Poster</span>
+              <h3>Tarta Tatin</h3>
+              <p class="autor">por Carmen</p>
+              <span class="card-link">Ver receta →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO
+         Los inputs, selects y textareas tienen estilos por defecto muy feos
+         Los reseteamos y rediseñamos con padding, border, border-radius...
+         :focus → estado cuando el usuario hace clic en el campo
+         grid-template-columns: 1fr 1fr → dos columnas para el formulario
+         grid-column: span 2 → para que algún campo ocupe las dos columnas -->
+    <section class="formulario" id="enviar">
+      <div class="formulario-inner">
+        <h2>¿Tienes una receta secreta?</h2>
+        <p>Mándanosla y la añadimos al recetario. O no. Depende de si pones la foto.</p>
+        <form>
+          <div class="form-grid">
+            <div>
+              <label for="nombre">Tu nombre</label>
+              <input id="nombre" type="text" placeholder="Ej: Gordon Ramsay">
+            </div>
+            <div>
+              <label for="receta">Nombre de la receta</label>
+              <input id="receta" type="text" placeholder="Ej: Croquetas de la abuela">
+            </div>
+            <div>
+              <label for="categoria">Categoría</label>
+              <select id="categoria">
+                <option>Entrante</option>
+                <option>Principal</option>
+                <option>Postre</option>
+                <option>Lo que sea</option>
+              </select>
+            </div>
+            <div>
+              <label for="tiempo">Tiempo de preparación</label>
+              <input id="tiempo" type="text" placeholder="Ej: 30 minutos">
+            </div>
+            <div class="form-full">
+              <label for="descripcion">Ingredientes y pasos</label>
+              <textarea id="descripcion" rows="5" placeholder="Cuéntanos cómo lo haces..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn">Enviar receta</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">🍳 RecetaClass</p>
+      <p>Diseño Gráfico · Curso 2026</p>
+      <p>Hecho con HTML, CSS y mucha hambre.</p>
+      <a href="mailto:clase@hacercreativo.com" class="footer-mail">clase@hacercreativo.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
