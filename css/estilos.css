@@ -1,0 +1,532 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* =============================================
+   VARIABLES CSS
+   Paleta centralizada, fácil de cambiar todo
+   ============================================= */
+:root {
+  --color-bg: #f5f4f0;
+  --color-white: #ffffff;
+  --color-dark: #1a1a18;
+  --color-mid: #555550;
+  --color-light: #999990;
+  --color-border: #e4e3de;
+  --color-accent: #c8502a;   /* naranja tostado = acento cálido */
+  --color-accent-light: #f5ede9;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Lora", serif;
+  --radius: 10px;
+  --nav-height: 64px;
+}
+
+/* =============================================
+   RESET BÁSICO
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =============================================
+   NAV
+   display: flex → coloca logo y menú en fila
+   justify-content: space-between → los separa a los extremos
+   align-items: center → los centra verticalmente
+   position: sticky → se queda pegado arriba al hacer scroll
+   ============================================= */
+   
+nav {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0 48px;
+  height: var(--nav-height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--color-dark);
+}
+
+/* Lista de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+nav ul a {
+  color: var(--color-light);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  /* transition: animación suave al hacer hover. Se pueden encadenar animaciones */
+  transition: color 0.2s, background 0.2s;
+}
+
+nav ul a:hover {
+  color: var(--color-dark);
+  background: var(--color-bg);
+}
+
+/* Último li diferente: el botón CTA del menú el último <li> de los <uls>*/
+nav ul li:last-child a {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+nav ul li:last-child a:hover {
+  background: var(--color-accent); /* La transición se la he puesto al general */
+}
+
+
+/* =============================================
+   HERO
+   height: 100vh → ocupa el 100% de la altura de la ventana
+   background-image → imagen de fondo
+   background-size: cover → la imagen cubre todo el espacio
+   background-position: center → centra la imagen
+   display: flex → para centrar el contenido dentro
+   ============================================= */
+.hero {
+  height: 100vh;
+  /*min-height: 500px;*/
+
+  /* Imagen de fondo con gradiente oscuro encima para legibilidad */
+  background-image:
+    linear-gradient(to bottom, rgba(20,18,15,0.55) 0%, rgba(20,18,15,0.35) 100%),
+    url('https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=1600&q=80');
+  background-size: cover;         /* cubre todo sin deformarse */
+  background-position: center;    /* centra la imagen También se pueden poner dos medidas center center*/
+  background-attachment: fixed;   /* efecto parallax suave */
+
+  /* Flexbox para centrar el contenido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center; 
+}
+
+.hero-content {
+  color: var(--color-white); /* Todo el contenido en una cajita y heredan el color blanco del texto */
+  max-width: 640px;
+  padding: 0 24px;
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 8vw, 80px);  /* tamaño fluido */
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+}
+
+.btn-hero {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--color-white);
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-hero:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.7);
+}
+
+
+/* =============================================
+   SECCIÓN RECETAS
+   max-width + margin: 0 auto → centra el contenido
+   display: grid + grid-template-columns → cuadrícula de 3 columnas
+   ============================================= */
+.recetas {
+  padding: 80px 24px;
+}
+
+.recetas-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recetas h2 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-light);
+  margin-bottom: 36px;
+}
+
+/* Grid de 3 columnas iguales */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* =============================================
+   CARDS
+   overflow: hidden → la imagen respeta el border-radius
+   transition → anima el hover suavemente
+   ============================================= */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;           /* importante: recorta la imagen */
+  display: block;
+
+  /* Transición: se aplica a box-shadow y transform */
+  transition: box-shadow 0.25s, transform 0.25s, background 0.25s;
+}
+
+/* Hover: sube la tarjeta y añade sombra */
+.card:hover {
+  transform: translateY(-5px);    /* sube 5px */
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  background: var(--color-accent-light);
+}
+
+/* Imagen de la card */
+.card-img {
+  overflow: hidden;
+  height: 180px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;   /* zoom suave al hover */
+}
+
+.card:hover .card-img img {
+  transform: scale(1.05);
+}
+
+/* Cuerpo de la card */
+.card-body {
+  padding: 16px 18px 20px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.card .autor {
+  font-size: 12px;
+  color: var(--color-light);
+  margin-bottom: 12px;
+}
+
+.card-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+
+/* =============================================
+   FORMULARIO
+   Los inputs/selects/textareas tienen estilos del navegador
+   Los reseteamos con border, padding, border-radius...
+   :focus → cuando el usuario hace clic en el campo
+   grid: dos columnas con algunos campos a ancho completo
+   ============================================= */
+
+.formulario {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 80px 24px;
+}
+
+.formulario-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.formulario h2 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--color-dark);
+}
+
+.formulario p {
+  font-size: 15px;
+  color: var(--color-mid);
+  margin-bottom: 36px;
+}
+
+/* Grid del formulario: 2 columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+/* Label: pequeño, encima del campo */
+.form-grid label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+/* Inputs, select y textarea: reseteamos y rediseñamos */
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-dark);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  resize: vertical;          /* solo se puede redimensionar verticalmente */
+  appearance: none;           /* quitamos el estilo por defecto del navegador */
+  transition: border-color 0.2s, background 0.2s;
+}
+
+/* :focus → estado activo del campo */
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus {
+  border-color: var(--color-dark);
+  background: var(--color-white);
+}
+
+/* Placeholder más sutil */
+.form-grid input::placeholder,
+.form-grid textarea::placeholder {
+  color: #c0bfba;
+}
+
+/* Campo que ocupa las dos columnas */
+.form-full {
+  grid-column:  span 2;
+}
+
+/* Botón enviar */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 13px 32px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-logo {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+footer p {
+  font-size: 13px;
+  color: var(--color-light);
+}
+
+.footer-mail {
+  font-size: 13px;
+  color: var(--color-mid);
+  margin-top: 6px;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-mail:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  /* Menú más compacto */
+  nav {
+    padding: 0 24px;
+  }
+
+  /* Grid pasa de 3 → 2 columnas */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero texto un poco más pequeño */
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 60px);
+  }
+}
+
+
+/* Móvil */
+@media (max-width: 768px) {
+
+  /* NAV en columna */
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Hero sin parallax (mejor rendimiento en móvil) */
+  .hero {
+    background-attachment: scroll;
+    height: 80vh;
+  }
+
+  /* Grid pasa a 1 columna */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Secciones con menos padding */
+  .recetas,
+  .formulario {
+    padding: 60px 16px;
+  }
+
+  /* Formulario a 1 columna */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-full {
+    grid-column: span 1;
+  }
+
+  /* Footer centrado ya lo está, pero reforzamos */
+  .footer-inner {
+    text-align: center;
+  }
+}
