@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elena Lassa — Portfolio personal de diseño gráfico, identidad visual, dirección de arte y diseño digital." />
+  <title>Elena Lassa — Portfolio personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="loader" class="loader">
+    <div class="loader__inner">
+      <div class="loader__label">LOADING</div>
+      <div class="loader__num"><span id="loader-count">0</span><span>%</span></div>
+      <div class="loader__bar"><div class="loader__fill" id="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+
+  <header class="header" id="header">
+    <div class="header__left">
+      <a href="#home" class="header__logo">ELENA LASSA</a>
+      <span class="header__claim">Portfolio personal</span>
+    </div>
+    <nav class="header__nav">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header__meta"><span>Madrid, Spain</span></div>
+    <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#about" class="mobile-nav__link">About</a>
+    <a href="#projects" class="mobile-nav__link">Projects</a>
+    <a href="#contact" class="mobile-nav__link">Contact</a>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero__media" aria-hidden="true">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+        <source src="assets/media/video-portada.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="hero__tag"><span>01</span><span>STUDIO / 2026</span></div>
+
+    <div class="hero__name">Elena Lassa</div>
+
+    <h1 class="hero__title">
+      <span class="hero__line">We <em>create</em></span>
+      <span class="hero__line hero__line--indent">visual systems</span>
+      <span class="hero__line">with intention</span>
+    </h1>
+
+    <div class="hero__aside"><p>Graphic design portfolio<br>identity, image and digital direction.</p></div>
+
+    <div class="hero__deco" aria-hidden="true">
+      <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="110" r="90" stroke="#D8D2C8" stroke-width="1" />
+        <circle cx="110" cy="110" r="55" stroke="#8B5E3C" stroke-width="0.6" stroke-dasharray="5 5" />
+        <line x1="20" y1="110" x2="200" y2="110" stroke="#D8D2C8" stroke-width="0.6" />
+        <line x1="110" y1="20" x2="110" y2="200" stroke="#D8D2C8" stroke-width="0.6" />
+        <circle cx="110" cy="110" r="4" fill="#8B5E3C" />
+      </svg>
+    </div>
+
+    <div class="hero__bottom"><span class="scroll-hint">↓ PLEASE SCROLL DOWN</span></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label">02 — ABOUT</div>
+      <div class="about__grid">
+        <div class="about__left">
+          <h2 class="about__title reveal">Design that<br><em>holds meaning</em><br>beyond the surface.</h2>
+        </div>
+        <div class="about__right">
+          <p class="about__body reveal-up">
+            Acabo de terminar la carrera de Diseño Gráfico y entiendo el diseño como una forma de pensar, ordenar y emocionar. Soy una persona creativa, inquieta y muy visual; me interesa construir identidades, piezas editoriales, campañas y sistemas gráficos con intención, cuidando tanto el concepto como el detalle final.
+          </p>
+          <div class="toolkit reveal-up" aria-label="Herramientas de diseño">
+            <div class="toolkit__label">Software & creative tools</div>
+            <div class="toolkit__grid">
+              <span class="tool-badge">Adobe CC</span>
+              <span class="tool-badge">Ps</span>
+              <span class="tool-badge">Ai</span>
+              <span class="tool-badge">Id</span>
+              <span class="tool-badge">Ae</span>
+              <span class="tool-badge">Pr</span>
+              <span class="tool-badge">Lr</span>
+              <span class="tool-badge">Xd</span>
+              <span class="tool-badge">Figma</span>
+              <span class="tool-badge">Procreate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles" id="principles">
+    <div class="container">
+      <div class="section-label">03 — PHILOSOPHY</div>
+      <h2 class="principles__heading reveal">Way<br>of working.</h2>
+      <div class="principles__grid">
+        <button class="principle reveal-up" type="button" data-modal-title="Conceptual" data-modal-media="assets/media/principle-conceptual-alo-3.jpg">
+          <div class="principle__num">01</div>
+          <h3 class="principle__title">Conceptual</h3>
+          <p class="principle__text">Cada pieza nace desde una idea. Antes de diseñar, se define qué debe comunicar, qué lugar ocupa y qué sensación debe dejar.</p>
+          <span class="principle__hint">Click to view image</span>
+          <span class="principle__bg-word" aria-hidden="true">CONCEPT</span>
+        </button>
+
+        <button class="principle principle--mid reveal-up" type="button" style="--delay:0.15s" data-modal-title="Visual" data-modal-media="assets/media/principle-visual-modular-1.jpg">
+          <div class="principle__num">02</div>
+          <h3 class="principle__title">Visual</h3>
+          <p class="principle__text">La estética no funciona como decoración, sino como lenguaje. Color, forma, ritmo y composición construyen una identidad reconocible.</p>
+          <span class="principle__hint">Click to view image</span>
+          <span class="principle__bg-word" aria-hidden="true">DESIGN</span>
+        </button>
+
+        <button class="principle principle--right reveal-up" type="button" style="--delay:0.3s" data-modal-title="Memorable" data-modal-media="assets/media/principle-memorable-la-ramona-1.jpg">
+          <div class="principle__num">03</div>
+          <h3 class="principle__title">Memorable</h3>
+          <p class="principle__text">El objetivo es que la experiencia permanezca. Que el usuario recuerde el gesto, el mensaje, la atmósfera y la forma de interactuar.</p>
+          <span class="principle__hint">Click to view image</span>
+          <span class="principle__bg-word" aria-hidden="true">LASTING</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="works" id="projects">
+    <div class="container">
+      <div class="works__top">
+        <div class="works__top-left">
+          <div class="section-label">04 — SELECTED WORKS</div>
+          <h2 class="works__title reveal">Recent<br>projects.</h2>
+        </div>
+        <div class="works__tags reveal-up">
+          <span class="tag active" data-filter="all">ALL</span>
+          <span class="tag" data-filter="branding">BRANDING</span>
+          <span class="tag" data-filter="digital">DIGITAL</span>
+          <span class="tag" data-filter="campaign">CAMPAIGN</span>
+          <span class="tag" data-filter="space">SPACE</span>
+          <span class="tag" data-filter="art">ART DIRECTION</span>
+        </div>
+      </div>
+
+      <div class="works__grid works__grid--grouped">
+        <article class="card card--group card--large reveal-up" data-cat="branding" style="--delay:0.00s">
+          <button class="card__link project-gallery-trigger" type="button" data-gallery="branding">
+            <div class="card__img">
+              <img class="card__media" src="assets/media/branding-freak-wear-logo.jpg" alt="Branding cover" loading="lazy" />
+              <div class="card__overlay"><span>Open carousel →</span></div>
+            </div>
+            <div class="card__info">
+              <div class="card__meta"><span class="card__cat">Branding</span><span class="card__yr">10 pieces</span></div>
+              <h3 class="card__title">Branding</h3>
+              <p class="card__desc">Freak Wear · Trazo</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card card--group card--large reveal-up" data-cat="digital" style="--delay:0.08s">
+          <button class="card__link project-gallery-trigger" type="button" data-gallery="digital">
+            <div class="card__img">
+              <video class="card__media" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/bunker-video.mp4" type="video/mp4" />
+              </video>
+              <div class="card__overlay"><span>Open carousel →</span></div>
+            </div>
+            <div class="card__info">
+              <div class="card__meta"><span class="card__cat">Digital</span><span class="card__yr">2 videos</span></div>
+              <h3 class="card__title">Digital</h3>
+              <p class="card__desc">Bunker · Freak Wear</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card card--group reveal-up" data-cat="campaign" style="--delay:0.16s">
+          <button class="card__link project-gallery-trigger" type="button" data-gallery="campaign">
+            <div class="card__img">
+              <img class="card__media" src="assets/media/campaign-trazo-1.jpg" alt="Campaign cover" loading="lazy" />
+              <div class="card__overlay"><span>Open carousel →</span></div>
+            </div>
+            <div class="card__info">
+              <div class="card__meta"><span class="card__cat">Campaign</span><span class="card__yr">6 pieces</span></div>
+              <h3 class="card__title">Campaign</h3>
+              <p class="card__desc">Trazo · Modular · Aragón · Freak Wear</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card card--group reveal-up" data-cat="space" style="--delay:0.00s">
+          <button class="card__link project-gallery-trigger" type="button" data-gallery="space">
+            <div class="card__img">
+              <img class="card__media" src="assets/media/space-trazo-10.jpg" alt="Space cover" loading="lazy" />
+              <div class="card__overlay"><span>Open carousel →</span></div>
+            </div>
+            <div class="card__info">
+              <div class="card__meta"><span class="card__cat">Space</span><span class="card__yr">3 pieces</span></div>
+              <h3 class="card__title">Space</h3>
+              <p class="card__desc">Trazo · Freak Wear · Bunker</p>
+            </div>
+          </button>
+        </article>
+
+        <article class="card card--group reveal-up" data-cat="art" style="--delay:0.08s">
+          <button class="card__link project-gallery-trigger" type="button" data-gallery="art">
+            <div class="card__img">
+              <img class="card__media" src="assets/media/art-intervalo-8.jpg" alt="Art Direction cover" loading="lazy" />
+              <div class="card__overlay"><span>Open carousel →</span></div>
+            </div>
+            <div class="card__info">
+              <div class="card__meta"><span class="card__cat">Art Direction</span><span class="card__yr">6 pieces</span></div>
+              <h3 class="card__title">Art Direction</h3>
+              <p class="card__desc">Intervalo</p>
+            </div>
+          </button>
+        </article>
+      </div>
+
+      <div class="works__more reveal-up"><a href="#contact" class="btn-outline">Work with me <span>→</span></a></div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div class="container">
+      <div class="section-label manifesto__label">05 — MANIFESTO</div>
+      <blockquote class="manifesto__quote">
+        <span class="m-line reveal-up" style="--delay:0s">We design systems</span>
+        <span class="m-line reveal-up" style="--delay:.12s"><em>that feel clear,</em></span>
+        <span class="m-line reveal-up" style="--delay:.24s">useful and emotionally</span>
+        <span class="m-line reveal-up" style="--delay:.36s">precise.</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__header">
+        <div class="section-label">06 — CONTACT</div>
+        <h2 class="contact__title reveal">Let's build<br>something<br><em>together.</em></h2>
+        <p class="contact__sub reveal-up">Feel free to reach out anytime.</p>
+        <a href="mailto:elenalasa.tirado@gmail.com" class="contact__email reveal-up">elenalasa.tirado@gmail.com</a>
+      </div>
+      <form class="contact__form reveal-up" id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Elena Lassa" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company / Project</label>
+          <input type="text" id="company" name="company" placeholder="LASSA Design" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="elenalasa.tirado@gmail.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="677 783 188" />
+          </div>
+        </div>
+        <div class="form-group form-group--full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit"><span>Submit Message</span><span class="btn-arrow">→</span></button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">ELENA LASSA</div>
+      <div class="footer__row">
+        <div class="footer__left">
+          <p class="footer__tagline">Portfolio personal de diseño gráfico,<br>identidad visual y dirección de arte.</p>
+          <div class="footer__contact">
+            <a href="mailto:elenalasa.tirado@gmail.com">elenalasa.tirado@gmail.com</a>
+            <span>+34 677 783 188</span>
+          </div>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav"><a href="#home">Home</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+          <div class="footer__social"><a href="#" target="_blank" rel="noopener">Instagram</a><a href="#" target="_blank" rel="noopener">Behance</a><a href="#" target="_blank" rel="noopener">LinkedIn</a></div>
+        </div>
+      </div>
+      <div class="footer__copy"><span>© 2026 Elena Lassa. All rights reserved.</span><span>Madrid, Spain</span></div>
+    </div>
+  </footer>
+
+  <div class="media-modal" id="media-modal" aria-hidden="true">
+    <button class="media-modal__close" id="modal-close" type="button" aria-label="Close carousel">×</button>
+    <div class="media-modal__panel">
+      <div class="media-modal__top">
+        <div class="media-modal__label" id="modal-label">Project image</div>
+        <div class="media-modal__counter" id="modal-counter">1 / 1</div>
+      </div>
+      <div class="media-modal__stage" id="modal-stage"></div>
+      <div class="media-modal__controls" id="modal-controls">
+        <button class="media-modal__nav" id="modal-prev" type="button" aria-label="Previous project">←</button>
+        <button class="media-modal__nav" id="modal-next" type="button" aria-label="Next project">→</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
