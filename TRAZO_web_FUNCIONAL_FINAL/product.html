@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto · TRAZO</title>
+  <meta name="description" content="Ficha de producto TRAZO con look completo, foto individual, selector de talla, composición y cesta.">
+  <meta name="theme-color" content="#fffdf3">
+  <link rel="icon" href="assets/brand/trazo-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-page="product">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- HEADER -->
+  <header class="site-header compact" data-header>
+    <a class="brand" href="index.html" aria-label="TRAZO, volver al inicio">
+      <img src="assets/brand/trazo-logo.png" alt="TRAZO" class="brand-logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-nav-toggle>
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" data-nav aria-label="Navegación principal">
+      <a href="index.html#marca">Marca</a>
+      <a href="index.html#productos">Productos</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cart-pill" href="cart.html" aria-label="Ver cesta">
+        Cesta <strong data-cart-count>0</strong>
+      </a>
+    </nav>
+  </header>
+
+  <!-- FICHA DE PRODUCTO -->
+  <main id="contenido" class="product-page-shell" data-product-detail>
+    <section class="product-detail section-shell">
+
+      <!-- GALERÍA -->
+      <div class="product-gallery reveal" data-gallery>
+        <div class="gallery-frame">
+          <img data-gallery-image src="" alt="" loading="eager">
+          <button class="gallery-arrow prev" type="button" data-gallery-prev aria-label="Ver imagen anterior">&#8592;</button>
+          <button class="gallery-arrow next" type="button" data-gallery-next aria-label="Ver imagen siguiente">&#8594;</button>
+          <span class="gallery-label" data-gallery-label>Look completo</span>
+        </div>
+        <div class="gallery-thumbs" data-gallery-thumbs></div>
+      </div>
+
+      <!-- INFO + FORMULARIO -->
+      <article class="product-info reveal delay-1">
+        <a class="back-link" href="index.html#productos">&#8592; Volver a productos</a>
+        <p class="eyebrow" data-product-category></p>
+        <h1 data-product-name></h1>
+        <p class="price" data-product-price></p>
+        <p class="product-description" data-product-description></p>
+
+        <div class="product-meta-grid">
+          <div><span>Color</span><strong data-product-color></strong></div>
+          <div><span>Corte</span><strong data-product-fit></strong></div>
+          <div><span>Uso</span><strong data-product-use></strong></div>
+          <div><span>Referencia</span><strong data-product-sku></strong></div>
+        </div>
+
+        <form class="product-form" data-add-form>
+          <fieldset>
+            <legend>Selecciona tu talla</legend>
+            <div class="size-grid" data-size-grid></div>
+            <p class="size-helper">Disponible en XS, S, M, L, XL, XXL y XXXL. Consulta la guía de tallas más abajo.</p>
+          </fieldset>
+
+          <label class="quantity-label" for="quantity">Cantidad</label>
+          <div class="quantity-control">
+            <button type="button" data-qty-minus aria-label="Restar una unidad">&#8722;</button>
+            <input id="quantity" name="quantity" type="number" value="1" min="1" max="9" data-qty-input>
+            <button type="button" data-qty-plus aria-label="Añadir una unidad">&#43;</button>
+          </div>
+
+          <button class="btn btn-primary full" type="submit">Añadir a la cesta</button>
+          <a class="btn btn-ghost full" href="cart.html" style="margin-top:.6rem">Ver cesta</a>
+        </form>
+      </article>
+    </section>
+
+    <!-- ACORDEÓN DE DETALLES -->
+    <section class="product-tabs section-shell reveal">
+      <div class="accordion" data-accordion>
+
+        <button type="button" aria-expanded="true">Descripción y propiedades</button>
+        <div class="accordion-panel open">
+          <ul data-product-properties></ul>
+        </div>
+
+        <button type="button" aria-expanded="false">Composición y cuidados</button>
+        <div class="accordion-panel">
+          <p><strong>Composición:</strong> <span data-product-composition></span></p>
+          <p><strong>Cuidados:</strong> <span data-product-care></span></p>
+        </div>
+
+        <button type="button" aria-expanded="false">Guía de tallas</button>
+        <div class="accordion-panel">
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr><th>Talla</th><th>Pecho</th><th>Cintura</th><th>Cadera</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>XS</td><td>78–82 cm</td><td>60–64 cm</td><td>86–90 cm</td></tr>
+                <tr><td>S</td><td>83–87 cm</td><td>65–69 cm</td><td>91–95 cm</td></tr>
+                <tr><td>M</td><td>88–92 cm</td><td>70–74 cm</td><td>96–100 cm</td></tr>
+                <tr><td>L</td><td>93–99 cm</td><td>75–81 cm</td><td>101–107 cm</td></tr>
+                <tr><td>XL</td><td>100–106 cm</td><td>82–88 cm</td><td>108–114 cm</td></tr>
+                <tr><td>XXL</td><td>107–114 cm</td><td>89–96 cm</td><td>115–122 cm</td></tr>
+                <tr><td>XXXL</td><td>115–122 cm</td><td>97–104 cm</td><td>123–130 cm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="size-helper">Para calzado, la selección funciona como equivalencia interna de stock en el prototipo.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTOS RELACIONADOS -->
+    <section class="related section-shell">
+      <div class="section-heading split reveal">
+        <div>
+          <p class="eyebrow">También encaja con</p>
+          <h2>Otras piezas de la colección</h2>
+        </div>
+      </div>
+      <div class="product-grid small" data-related-grid></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <img src="assets/brand/trazo-logo.png" alt="TRAZO">
+    <p>Vestir con intención &nbsp;·&nbsp; comprar con calma</p>
+  </footer>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+</body>
+</html>
