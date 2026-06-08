@@ -1,0 +1,18 @@
+COMPROBACIÓN DE FUNCIONAMIENTO
+==============================
+
+- Archivos base: OK (OK)
+- 23 looks completos: OK (23)
+- 23 productos individuales: OK (23)
+- 23 productos en products.js: OK (23 productos, ['01']...['23'])
+- Rutas HTML: OK (OK)
+
+RECORRIDO QUE DEBE FUNCIONAR
+1. Abrir index.html con Live Server.
+2. Ver logo TRAZO, secciones de marca, valores, productos, opiniones y contacto.
+3. Clicar una carátula de producto: abre product.html?id=XX.
+4. En producto, usar flechas para alternar look completo / foto individual.
+5. Elegir talla XS-S-M-L-XL-XXL-XXXL y añadir a cesta.
+6. Entrar en cart.html, cambiar cantidades, eliminar productos y finalizar pedido simulado.
+
+Correspondencia de imágenes: look-01 con product-01, look-02 con product-02, etc.
